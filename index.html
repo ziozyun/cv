@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ihor Lishchuk CV</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/iconify/3.1.1/iconify.min.js"></script>
+    <script
+      src="https://unpkg.com/alpinejs@3.14.1/dist/cdn.min.js"
+      defer
+    ></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+      * {
+        font-family: "Roboto", serif;
+      }
+
+      .a4-size {
+        min-width: 210mm;
+        max-width: 210mm;
+        min-height: 297mm;
+        max-height: 297mm;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-gradient-to-br from-indigo-500 via-blue-500 to-green-500 flex flex-col items-center"
+    x-data="{
+      lang: localStorage.getItem('lang') ?? 'en',
+      langicon: {
+        ua: 'circle-flags:ua',
+        en: 'circle-flags:gb-eng',
+      },
+      hobbyicons: ['flat-color-icons:music', 'icon-park:file-code', 'material-symbols:explore'],
+      translations: {
+        ua: {
+          firstname: 'Ігор',
+          lastname: 'Ліщук',
+          profile: {
+            title: 'Профіль',
+            text: 'Fullstack розробник з акцентом на backend. Маю досвід у розробці масштабованих серверних рішень, інтеграції баз даних та API. Вмію ефективно вирішувати технічні задачі та оптимізувати системи. Шукаю можливості для реалізації навичок у створенні якісних технічних рішень.',
+          },
+          location: 'Київ, Дистанційно',
+          languages: {
+            title: 'Мови',
+            ua: 'Українська (вільно)',
+            en: 'Англійська (середній)',
+          },
+          hobbies: {
+            title: 'Хобі',
+            list: [
+              'Музика',
+              'Писати код',
+              'Дослідження',
+            ],
+          },
+          skills: 'Навички',
+          experience: {
+            title: 'Досвід',
+            list: [
+              {
+                title: 'Freelance',
+                subtitle: 'з 12.2022, Дистанційно',
+              },
+              {
+                title: 'Full stack програміст',
+                subtitle: 'з 12.2021 по 12.2022, ProtoQ, Дистанційно',
+              },
+              {
+                title: '.Net програміст',
+                subtitle: 'з 04.2020 по 08.2021, TemaBit, Київ',
+              },
+              {
+                title: 'Full stack програміст',
+                subtitle: 'з 06.2018 по 09.2019, KIES, Київ',
+              },
+            ],
+          },
+          education: {
+            title: 'Освіта',
+            list: [
+              {
+                title: 'Державний Університет Телекомунікацій',
+                subtitle: 'Інженерія програмного забезпечення, Київ, Вища, з 2018 по 2023 (5 роки), бакалавр, магістр',
+              },
+              {
+                title: 'Приватний вищий навчальний заклад «Економіко-правовий технікум при Міжрегіональній Академії управління персоналом»',
+                subtitle: 'Розробка програмного забезпечення, Київ, Середня спеціальна, з 2014 по 2018 (4 роки)',
+              },
+            ],
+          },
+        },
+        en: {
+          firstname: 'Ihor',
+          lastname: 'Lishchuk',
+          profile: {
+            title: 'Profile',
+            text: 'Fullstack developer with a focus on backend. I have experience in developing scalable server solutions, database integration, and APIs. I can effectively solve technical problems and optimize systems. I am looking for opportunities to realize my skills in creating high-quality technical solutions.',
+          },
+          location: 'Kyiv, Remote',
+          languages: {
+            title: 'Languages',
+            ua: 'Ukrainian (fluent)',
+            en: 'English (intermediate)',
+          },
+          hobbies: {
+            title: 'Hobbies',
+            list: [
+              'Listening Music',
+              'Coding',
+              'Explore',
+            ],
+          },
+          skills: 'Skills',
+          experience: {
+            title: 'Experience',
+            list: [
+              {
+                title: 'Freelance',
+                subtitle: 'from 12.2022, Remote',
+              },
+              {
+                title: 'Full stack developer',
+                subtitle: 'from 12.2021 to 12.2022, ProtoQ, Remote',
+              },
+              {
+                title: '.Net developer',
+                subtitle: 'from 04.2020 to 08.2021, TemaBit, Kyiv',
+              },
+              {
+                title: 'Full stack developer',
+                subtitle: 'from 06.2018 to 09.2019, KIES, Kyiv',
+              },
+            ],
+          },
+          education: {
+            title: 'Education',
+            list: [
+              {
+                title: 'State University of Telecommunications',
+                subtitle: 'Software Engineering, Kyiv, Higher, from 2018 to 2023 (5 years), Bachelor, Master',
+              },
+              {
+                title: 'Private Higher Educational Institution “Economic and Legal College at the Interregional Academy of Personnel Management”',
+                subtitle: 'Software development, Kyiv, Secondary specialty, from 2014 to 2018 (4 years)',
+              },
+            ],
+          },
+        },
+      },
+    }"
+  >
+    <section class="a4-size bg-white/20 p-4 flex">
+      <div class="border-4 border-indigo-500 rounded-xl w-full p-4">
+        <div class="flex items-start pb-4 border-b-2 border-indigo-500 mb-4">
+          <img
+            src="data:image/webp;base64,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"
+            class="rounded-xl"
+            width="200"
+            height="200"
+            alt="Profile photo"
+          />
+          <div class="ml-4">
+            <div class="flex justify-between">
+              <div class="text-4xl">
+                <b x-text="translations[lang].firstname"></b>
+                <span x-text="translations[lang].lastname"></span>
+              </div>
+              <div class="text-sm">
+                <template x-for="(key, index) in Object.keys(translations)">
+                  <button
+                    x-bind:class="`p-2 rounded hover:bg-white/40 ${lang === key ? 'bg-white/30' : ''}`"
+                    @click="() => {
+                      lang = key;
+                      localStorage.setItem('lang', lang);
+                    }"
+                  >
+                    <i
+                      class="iconify"
+                      x-bind:data-icon="langicon[key]"
+                      data-width="25px"
+                    ></i>
+                  </button>
+                </template>
+              </div>
+            </div>
+            <p class="text-xl">WEB / Software Developer</p>
+            <div
+              class="mt-4"
+              x-data="{
+                links: [
+                  {
+                    href: 'https://zyun.software/',
+                    icon: 'dashicons:admin-site-alt3',
+                    text: 'zyun.software',
+                    title: 'Website',
+                  },
+                  {
+                    href: 'https://linkedin.com/in/lishchukiv/',
+                    icon: 'devicon:linkedin',
+                    text: 'linkedin.com/in/lishchukiv',
+                    title: 'LinkedIn',
+                  },
+                  {
+                    href: 'https://github.com/zyun-software',
+                    icon: 'mdi:github',
+                    text: 'github.com/zyun-software',
+                    title: 'GitHub',
+                  },
+                ],
+              }"
+            >
+              <template x-for="link in links">
+                <a
+                  target="_blank"
+                  x-bind:href="link.href"
+                  x-bind:title="link.title"
+                  class="inline-block p-2 bg-white/20 hover:bg-white/40 rounded mr-2 mb-2 group"
+                >
+                  <i
+                    class="iconify inline"
+                    data-width="25px"
+                    x-bind:data-icon="link.icon"
+                  ></i>
+                  <span x-text="link.text"></span>
+                  <i
+                    class="iconify inline hidden group-hover:inline"
+                    data-icon="gridicons:external"
+                  ></i>
+                </a>
+              </template>
+            </div>
+          </div>
+        </div>
+        <div class="flex">
+          <div class="mr-4 w-[260px] border-r-4 border-indigo-500 pr-4">
+            <div class="border-b-2 pb-4 border-indigo-500 mb-4">
+              <h2
+                class="text-xl uppercase font-bold mb-2"
+                x-text="translations[lang].profile.title"
+              ></h2>
+              <p
+                class="text-justify mb-2"
+                x-text="translations[lang].profile.text"
+              ></p>
+              <div class="p-2 inline-block rounded bg-white/20 mb-2">
+                <i
+                  class="iconify inline mr-2"
+                  data-icon="ant-design:mobile-outlined"
+                  data-width="25px"
+                ></i>
+                <a class="group" href="tel:+380965447955">
+                  +380 (96) 544 7955
+                  <i
+                    class="iconify inline hidden group-hover:inline"
+                    data-icon="gridicons:external"
+                  ></i>
+                </a>
+              </div>
+              <div class="p-2 inline-block rounded bg-white/20 mb-2">
+                <i
+                  class="iconify inline mr-2"
+                  data-icon="ic:outline-email"
+                  data-width="25px"
+                ></i>
+                <a class="group" href="mailto:lishchuk.iv@gmail.com">
+                  lishchuk.iv@gmail.com
+                  <i
+                    class="iconify inline hidden group-hover:inline"
+                    data-icon="gridicons:external"
+                  ></i>
+                </a>
+              </div>
+              <div class="p-2 inline-block rounded bg-white/20">
+                <i
+                  class="iconify inline mr-2"
+                  data-icon="mingcute:location-line"
+                  data-width="25px"
+                ></i>
+                <span x-text="translations[lang].location"></span>
+              </div>
+            </div>
+            <div class="border-b-2 pb-3 border-indigo-500 mb-4">
+              <h2
+                class="text-xl uppercase font-bold mb-2"
+                x-text="translations[lang].languages.title"
+              ></h2>
+              <template x-for="key in Object.keys(translations)">
+                <div
+                  class="px-2 py-1 bg-white/30 inline-block rounded mr-2 mb-2 text-sm"
+                >
+                  <i
+                    class="iconify inline mr-2"
+                    x-bind:data-icon="langicon[key]"
+                  ></i>
+                  <span x-text="translations[lang].languages[key]"></span>
+                </div>
+              </template>
+            </div>
+            <div>
+              <h2
+                class="text-xl uppercase font-bold mb-2"
+                x-text="translations[lang].hobbies.title"
+              ></h2>
+              <template
+                x-for="(hobby, index) in translations[lang].hobbies.list"
+              >
+                <div
+                  class="px-2 py-1 bg-white/30 inline-block rounded mr-2 mb-2 text-sm"
+                >
+                  <i
+                    class="iconify inline mr-2"
+                    x-bind:data-icon="hobbyicons[index]"
+                  ></i>
+                  <span x-text="hobby"></span>
+                </div>
+              </template>
+            </div>
+          </div>
+          <div class="flex-1">
+            <div class="border-b-2 pb-3 border-indigo-500 mb-4">
+              <h2
+                class="text-xl uppercase font-bold mb-2"
+                x-text="translations[lang].skills"
+              ></h2>
+              <div class="flex flex-wrap gap-2">
+                <template
+                  x-for="skill in [
+                    {
+                      icon: 'skill-icons:docker',
+                      text: 'Docker',
+                    },
+                    {
+                      icon: 'devicon:postman',
+                      text: 'Postman',
+                    },
+                    {
+                      icon: 'devicon:visualstudio',
+                      text: 'Visual Studio',
+                    },
+                    {
+                      icon: 'devicon:csharp',
+                      text: 'C#',
+                    },
+                    {
+                      icon: 'devicon:vscode',
+                      text: 'Visual Studio Code',
+                    },
+                    {
+                      icon: 'skill-icons:html',
+                      text: 'HTML5',
+                    },
+                    {
+                      icon: 'skill-icons:css',
+                      text: 'CSS3',
+                    },
+                    {
+                      icon: 'devicon:git',
+                      text: 'Git',
+                    },
+                    {
+                      icon: 'vscode-icons:file-type-js-official',
+                      text: 'JavaScript',
+                    },
+                    {
+                      icon: 'devicon:typescript',
+                      text: 'TypeScript',
+                    },
+                    {
+                      icon: 'logos:nodejs',
+                      text: 'NodeJs',
+                    },
+                    {
+                      icon: 'devicon:svelte',
+                      text: 'SvelteKit',
+                    },
+                    {
+                      icon: 'logos:react',
+                      text: 'React',
+                    },
+                    {
+                      icon: 'skill-icons:angular-light',
+                      text: 'Angular',
+                    },
+                    {
+                      icon: 'logos:vue',
+                      text: 'Vue',
+                    },
+                    {
+                      icon: 'skill-icons:expressjs-light',
+                      text: 'Express',
+                    },
+                    {
+                      icon: 'devicon:redis',
+                      text: 'Redis',
+                    },
+                    {
+                      icon: 'skill-icons:alpinejs-light',
+                      text: 'Alpine',
+                    },
+                    {
+                      icon: 'skill-icons:tailwindcss-dark',
+                      text: 'Tailwind CSS',
+                    },
+                    {
+                      icon: 'logos:php',
+                      text: 'PHP',
+                    },
+                    {
+                      icon: 'devicon:laravel',
+                      text: 'Laravel',
+                    },
+                    {
+                      icon: 'tabler:sql',
+                      text: 'MSSQL',
+                    },
+                    {
+                      icon: 'logos:mysql',
+                      text: 'MySQL',
+                    },
+                    {
+                      icon: 'logos:postgresql',
+                      text: 'PostgreSQL',
+                    },
+                    {
+                      icon: 'skill-icons:mongodb',
+                      text: 'MongoDB',
+                    },
+                    {
+                      icon: 'skill-icons:linux-light',
+                      text: 'Linux',
+                    },
+                  ]"
+                >
+                  <div
+                    class="grid-item px-2 py-1 bg-white/30 inline-block rounded text-sm"
+                  >
+                    <i
+                      class="iconify inline mr-2"
+                      x-bind:data-icon="skill.icon"
+                    ></i>
+                    <span x-text="skill.text"></span>
+                  </div>
+                </template>
+              </div>
+            </div>
+            <div class="border-b-2 pb-2 border-indigo-500">
+              <h2
+                class="text-xl uppercase font-bold mb-2"
+                x-text="translations[lang].experience.title"
+              ></h2>
+              <template
+                x-for="experience in translations[lang].experience.list"
+              >
+                <div class="p-2 rounded bg-white/30 mb-2 text-sm">
+                  <b x-text="experience.title"></b>
+                  <span x-text="experience.subtitle"></span>
+                </div>
+              </template>
+            </div>
+            <div class="mb-4">
+              <h2
+                class="text-xl uppercase font-bold mb-2"
+                x-text="translations[lang].education.title"
+              ></h2>
+              <template
+                x-for="education in translations[lang].education.list"
+              >
+                <div class="p-2 rounded bg-white/30 mb-2 text-sm">
+                  <b x-text="education.title"></b>
+                  <span x-text="education.subtitle"></span>
+                </div>
+              </template>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- <section class="a4-size bg-white/20 p-4 flex">
+      <div class="border-4 border-blue-500 rounded-xl w-full p-4">2</div>
+    </section> -->
+  </body>
+</html>
